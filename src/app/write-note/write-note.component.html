@@ -1,1 +1,21 @@
-<p>write-note works!</p>
+<form class="main-content"
+  [formGroup]="noteForm"
+  (ngSubmit)="onSubmit(noteForm)"
+  ngNativeValidate>
+  <label class="d-block mb-8"
+    for="title-input">Заголовок заметки:</label>
+  <input class="d-block w-100 mb-16"
+    id="title-input"
+    formControlName="titleInput"
+    placeholder="Введите заголовок заметки"
+    required>
+  <label class="d-block mb-8"
+    for="content-text">Текст заметки:</label>
+  <textarea class="content-text d-block w-100 mb-16"
+    id="content-text"
+    formControlName="contentText"
+    placeholder="Введите текст заметки"
+    required></textarea>
+  <button class="add-note-btn"
+    type="submit">Добавить заметку</button>
+</form>
