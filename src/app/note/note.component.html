@@ -1,1 +1,5 @@
-<p>note works!</p>
+<article class="main-content"
+  *ngIf="note$ | async as note">
+  <h2 class="note-headline">{{note.title}}</h2>
+  <p [innerHTML]="note.content"></p>
+</article>

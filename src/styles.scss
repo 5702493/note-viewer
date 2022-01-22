@@ -29,7 +29,8 @@ body {
   width: 100%;
 }
 
-.headline {
+.headline,
+.note-headline {
   margin: 0;
 }
 
@@ -66,7 +67,19 @@ body {
   }
 }
 
-.nav-link {
+.nav-link,
+.main-content {
   word-wrap: break-word;
   word-break: break-word;
+}
+
+.main-content {
+  min-height: calc(100vh - #{$header-height});
+  margin-top: $header-height;
+  margin-left: $side-nav-width;
+  padding: 24px;
+}
+
+.note-headline {
+  color: #1e88e5;
 }

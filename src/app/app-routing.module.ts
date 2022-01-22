@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { NoteComponent } from './note/note.component';
+import { NoteResolver } from './note/note.resolver';
 import { WriteNoteComponent } from './write-note/write-note.component';
 
 const routes: Routes = [{
@@ -11,7 +12,10 @@ const routes: Routes = [{
 }, {
   path: 'note/:id',
   pathMatch: 'full',
-  component: NoteComponent
+  component: NoteComponent,
+  resolve: {
+    note: NoteResolver
+  }
 }, {
   path: '**',
   redirectTo: '/'
