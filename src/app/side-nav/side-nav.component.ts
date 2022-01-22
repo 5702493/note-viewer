@@ -1,4 +1,9 @@
+import { BehaviorSubject } from 'rxjs';
+
 import { Component, OnInit } from '@angular/core';
+
+import { DataService } from '../data.service';
+import { NoteModel } from '../note.model';
 
 @Component({
   selector: 'app-side-nav',
@@ -6,10 +11,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
+  data$?: BehaviorSubject<NoteModel[]>;
 
-  constructor() { }
+  constructor(private service: DataService) { }
 
   ngOnInit(): void {
+    this.data$ = this.service.data$;
   }
-
 }
