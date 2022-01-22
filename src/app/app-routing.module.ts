@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { NoteComponent } from './note/note.component';
 import { WriteNoteComponent } from './write-note/write-note.component';
 
 const routes: Routes = [{
   path: '',
   pathMatch: 'full',
   component: WriteNoteComponent
+}, {
+  path: 'note/:id',
+  pathMatch: 'full',
+  component: NoteComponent
 }, {
   path: '**',
   redirectTo: '/'
